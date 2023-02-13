@@ -4,7 +4,7 @@
     </head>
 
     <body>
-        <form name="register" method="post" action="register.php">
+        <form name="register" method="post" action="../PHPBackend/register.php">
             <h2>Form Data</h2>
             <fieldset>
                 <input type="text" name="fname" placeholder="First name: " required><br>
