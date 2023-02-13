@@ -1,7 +1,5 @@
 <footer>
-    <nav>
-        <img src="img/logo.png">
-    </nav>
+<p>This is my footer.</p>
 </footer>
 
 </body>

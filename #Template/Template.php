@@ -1,4 +1,5 @@
 <?php 
+$title = "";
 require 'includes/head.php';
 require 'includes/header.php';
 ?>
