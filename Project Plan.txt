@@ -1,1 +1,28 @@
 The project will be about a hardware business that orders will be facilitated online.
+
+The project will offer the ability to buy HTML {hardware items (Product page), sell hardware (Sales Page), and manage items (admin Access)} and will be linked to Stock database
+(SQL) through Orderprocessing (PHP), Inventory 
+
+It will also have customer sign in and register pages (sign in.html, register.html), managed by signin.php and register.php
+
+For sellers, they will also have separate signin and register pages (sellerssignin.html, sellersregister.html), managed by signin.php and register.php
+
+HTML pages are:
+    1. index.html - Will welcome people, give users access to sign in, sign up, provide links to product pages, etc
+    2. signin.html - Provide user ability to sign in
+    3. register.html - Provide user ability to register
+    4. products.html - Have All products, include a navbar to access different categories and products. All products will have an add to cart
+    5. order.html - Once someone has added all desired products to cart, he buys them
+    6. addproduct.html - A seller can add a product, it's description, product tag and price
+
+PHP pages are:
+    1. signin.php
+    2. register.php
+    3. orderprocessing.php
+    4. productaddition.php
+
+Databases present are:
+    1. Customer Information - Customer ID, Name, P.O.Box, credit/debit card number (hashed), email address and password (hashed)
+    2. Seller Information - Seller Id, Name (Business name), P.O.Box (Business address), bank account number(business acc) (hashed), email address(Business email) and password (hashed)
+    3. Stock Inventory - Product ID Name, Product Images, Product Description, Seller Id, Product price
+    4. Orders Made - Product ID, Customer ID, Date of Purchase.
