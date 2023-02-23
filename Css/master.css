@@ -15,18 +15,18 @@ header{
     box-shadow: 0 0 10px #000
 }
 
-ol{
+.mainNav ol{
     float: right;
     position: relative;
     right: 10%
 };
 
-ol li{
+.mainNav ol li{
     display: inline;
     list-style: none;
 }
 
-ol li a{
+.mainNav ol li a{
     display: inline;
     text-decoration: none;
     font-size: 18px;
