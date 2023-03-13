@@ -1,16 +1,24 @@
 <?php 
     $title = "Homepage";
     require 'includes/head.php';
-    require 'includes/header.php';
+    //require 'includes/header.php'; //Modify to full Navbar for seller
 ?>
-    <h1>Welcome to JH, the leading website in all matters hardware</h1>
-    <p>
-        <b>Know what to build with? <a href="order.php">Order here</a></b>
-        <br>
-        Don't know where to start? Interested in learning the process of building, how you move from idea to actualization? 
-        You've come to the right place. Click <a href="blog.php">here</a>. <br><br>
 
-        <a href="form.php">Get to the form page here.</a>
+<div>
+    <div>
+    <h1>Welcome to Hardware Yetu</h1>
+    <p>
+        The industry leading company that provides your required tools for completing that beautiful piece of art
+        <a href="shop.php">Shop now</a>
     </p>
-    
+    </div>
+    <div>
+    <h2>Looking to partner with us?</h2>
+    <p>
+        Come over and sell to the largest userbase in the country, using our modern commerce tools that make 
+        life easier.
+        <a href="sellerregistration.php">Join us</a>
+    </p>
+    </div>
+</div>
 <?php require 'includes/footer.php'; ?>

@@ -1,0 +1,59 @@
+****************************************************************************************************
+GENERATING THUMBNAILS TO STORE THEM IN database
+****************************************************************************************************
+// Get the filename and temporary location of the uploaded image
+$original_image = $_FILES['image']['tmp_name'];
+
+// Create an image resource from the original image
+$image = imagecreatefromjpeg($original_image);
+
+// Get the dimensions of the original image and calculate the desired size of the thumbnail
+$width = imagesx($image);
+$height = imagesy($image);
+$size = min($width, $height);
+
+// Create a new square image to hold the thumbnail
+$thumbnail = imagecreatetruecolor(100, 100);
+
+// Copy and resize the original image into the thumbnail
+imagecopyresampled($thumbnail, $image, 0, 0, ($width - $size) / 2, ($height - $size) / 2, 100, 100, $size, $size);
+
+// Save the thumbnail to disk
+$thumbnail_filename = 'thumbnails/' . uniqid() . '.jpg';
+imagejpeg($thumbnail, $thumbnail_filename, 90);
+
+// Store the filename of the thumbnail in the database
+$sql = "INSERT INTO products (name, price, image, thumbnail) VALUES ('$name', '$price', '$filename', '$thumbnail_filename')";
+
+***************************************************************************************************
+CART MANAGEMENT
+************************************************************************************************
+    You're correct! When users add multiple items to their cart, they cannot fill out a new form each time as that would be tedious and inconvenient. 
+    Instead, the cart needs to keep track of multiple products with their respective quantities selected by the user.
+
+    To implement this, you can create an array for each product in the cart that stores information such as the product ID, product name, price, quantity, and any other relevant details.
+    You can then store these product arrays in a session variable, which allows you to maintain the cart contents throughout the user's browsing session on your website.
+
+    For example, when the user adds a product to their cart, you can create an array with the product details and store it in the cart session variable as follows:
+
+// Initialize empty cart array if it doesn't exist yet
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+}
+
+// Add product to cart array
+$product_id = 123; // ID of the product being added
+$product_name = 'Widget'; // Name of the product being added
+$product_price = 19.99; // Price of the product being added
+$quantity = 2; // Quantity selected by the user
+$product_array = array(
+    'id' => $product_id,
+    'name' => $product_name,
+    'price' => $product_price,
+    'quantity' => $quantity
+);
+$_SESSION['cart'][] = $product_array;
+
+    You can then loop through the $_SESSION['cart'] array to display the contents of the user's cart on the checkout page, and calculate the total amount based on the prices and quantities of each product.
+
+

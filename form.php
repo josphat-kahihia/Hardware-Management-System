@@ -1,7 +1,7 @@
 <?php 
 $title = "Input Form";
 require 'includes/head.php';
-require 'includes/header.php';
+//require 'includes/header.php'; //Modify to full Navbar for seller
 ?>
     <form name="register" method="post" action="../PHPBackend/register.php">
         <h2>Form Data</h2>

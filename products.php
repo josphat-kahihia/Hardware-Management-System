@@ -1,7 +1,7 @@
 <?php 
 $title = "Products";
 require 'includes/head.php';
-require 'includes/header.php';
+//require 'includes/header.php'; //Modify to full Navbar for seller
 ?>
 
 
