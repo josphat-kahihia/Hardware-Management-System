@@ -23,6 +23,7 @@ require '../includes/head.php';
     <input type="file" name="extraImages2" id="extraImages">
     <input type="file" name="extraImages3" id="extraImages">
     <br>
+    <label for password="password">Password</label>
     <input type="password" name="password">
     <br>
     <select name="status">

@@ -7,6 +7,7 @@ require_once 'includes/head.php';
     <p>Sign in</p>
     <input type="text" name=email placeholder="Email Address">
     <input type="password" name=password placeholder="Password">
+    <button type="submit" name="login">LOGIN</button>
     <p>
         <a href="PHPBackend/forgot_Password.php">reset password</a>
         <br>
