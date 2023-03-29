@@ -59,12 +59,13 @@ if(isset($_POST['submit']))
                     $newFileName = uniqid('', true). '.'. $standardFileExtension;
                     $fileDestination = "FileUploads/images/$newFileName";
                     move_uploaded_file($tmp_name, $fileDestination);
+                    $fileLocation = "PHPBackend/" . $fileDestination; //For storing location based on relative file path
                     
                     // Prepare the SQL query with parameters
                     $stmtstore = $conn->prepare("INSERT INTO products (product_name, description, price, stock, file_path, seller_id) VALUES (?, ?, ?, ?, ?, ?)");
 
                     // Bind the parameters to the statement
-                    $stmtstore->bind_param("sssssi", $productName, $productDescription, $productPrice, $status, $fileDestination, $seller_id);
+                    $stmtstore->bind_param("sssssi", $productName, $productDescription, $productPrice, $status, $fileLocation, $seller_id);
 
                     // Execute the statement
                     $stmtstore->execute();

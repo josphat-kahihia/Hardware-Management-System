@@ -1,0 +1,42 @@
+Yes, it is possible to achieve this functionality without JavaScript by using a server-side language like PHP. Here is an example code snippet that demonstrates how you can add items to a cart and then process the order using PHP:
+
+HTML:
+&lt;form action="order.php" method="post"&gt;
+  &lt;input type="hidden" name="product_id" value="123"&gt;
+  &lt;input type="hidden" name="product_name" value="Example Product"&gt;
+  &lt;input type="hidden" name="product_price" value="9.99"&gt;
+  &lt;input type="submit" name="add_to_cart" value="Add to Cart"&gt;
+&lt;/form&gt;
+
+
+PHP (order.php):
+&lt;?php
+// Start the session
+session_start();
+
+// If the add to cart button was clicked
+if (isset($_POST['add_to_cart'])) {
+  // Get the product details from the form data
+  $product_id = $_POST['product_id'];
+  $product_name = $_POST['product_name'];
+  $product_price = $_POST['product_price'];
+
+  // If the cart session variable doesn't exist, create it
+  if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+  }
+
+  // Add the product to the cart
+  $_SESSION['cart'][] = array(
+    'id' =&gt; $product_id,
+    'name' =&gt; $product_name,
+    'price' =&gt; $product_price
+  );
+}
+
+// Redirect the user to the shopping cart page
+header('Location: shopping_cart.php');
+exit();
+?&gt;
+
+In this code, we use a hidden form input to pass the product details to the PHP script, which then adds the product to the user's cart session variable. We then redirect the user to the shopping cart page, where they can view the items in their cart and proceed to checkout.
